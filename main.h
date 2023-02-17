@@ -10,4 +10,6 @@
 #include <signal.h>
 #include <unistol.h>
 
+int handle_args(char *command, char **arr);
+
 #endif
