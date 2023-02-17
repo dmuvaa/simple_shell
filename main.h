@@ -7,4 +7,6 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
+int handle_args(char *command, char **arr);
+
 #endif
