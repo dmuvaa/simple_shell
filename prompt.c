@@ -9,7 +9,11 @@ int main(int argc, char **argv)
 	while(1)
 	{
 		printf("%s", prompt);
-		getline(&linep, &n, stdin);
+		if (getline(&linep, &n, stdin) == -1)
+		{
+			perror("getline");
+			break;
+		}
 		printf("%s\n", linep);
 	}
 	free(linep);
