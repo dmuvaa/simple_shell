@@ -8,8 +8,10 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <signal.h>
+#include <sys/stat.h>
 
 int handle_args(char *command, char **arr);
+char *get_Path(char *command);
 char *get_Path(char *command);
 
 #endif
