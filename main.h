@@ -10,8 +10,14 @@
 #include <signal.h>
 #include <sys/stat.h>
 
+extern char **environ;
+
+char **env;
+
 int handle_args(char *command, char **arr);
-char *get_Path(char *command);
-char *get_Path(char *command);
+int check_builtins(char *command);
+void execute_builtin(char **arr);
+void execute_command(char **arr);
+void print_env(void);
 
 #endif
