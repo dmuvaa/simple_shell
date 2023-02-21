@@ -17,7 +17,8 @@ char **env;
 int handle_args(char *command, char **arr);
 int check_builtins(char *command);
 void execute_builtin(char **arr);
-void execute_command(char **arr);
+int execute_command(char **arr, char **env);
 void print_env(void);
+char *get_path(char *command, char **env);
 
 #endif

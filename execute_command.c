@@ -68,15 +68,15 @@ char *get_path(char *command, char **env)
 	if (path_env == NULL)
 		return (NULL);
 
-	path = _strdup(path_env);
+	path = strdup(path_env);
 	if (path == NULL)
 		return (NULL);
 
 	dir = strtok(path, ":");
 	while (dir != NULL)
 	{
-		tmp = _strcat(dir, "/");
-		tmp = _strcat(tmp, command);
+		tmp = strcat(dir, "/");
+		tmp = strcat(tmp, command);
 		if (stat(tmp, &st) == 0)
 		{
 			free(path_env);
@@ -88,9 +88,10 @@ char *get_path(char *command, char **env)
 	}
 	free(tmp);
 	dir = strtok(NULL, ":");
-}
-free(path_env);
-free(path);
 
-return (NULL);
+	free(path_env);
+	free(path);
+
+	return (NULL);
 }
+
