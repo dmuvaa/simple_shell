@@ -13,6 +13,7 @@
 extern char **environ;
 
 char **env;
+#define BUFFER_SIZE 1024
 
 int handle_args(char *command, char **arr);
 int check_builtins(char *command);
@@ -20,5 +21,7 @@ void execute_builtin(char **arr);
 int execute_command(char **arr, char **env);
 void print_env(void);
 char *get_path(char *command, char **env);
+void exit_shell(char* arg);
+char* my_getline(void);
 
 #endif
