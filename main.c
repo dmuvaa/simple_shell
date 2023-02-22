@@ -10,7 +10,7 @@
  * Return: 0 on success, 1 on failure
  */
 
-int main(void)
+int main(int argc, char *argv[], char *envp[])
 {
 	char *command = NULL;
 	size_t n = 0;
@@ -24,8 +24,7 @@ int main(void)
 		if (getline(&command, &n, stdin) == -1)
 			break;
 
-
-		if (argc == 0)
+		if (handle_args(command, arr) == 0)
 		{
 			free(arr);
 			continue;
@@ -37,8 +36,6 @@ int main(void)
 		}
 		else
 		{
-			char **envp = environ;
-
 			execute_command(arr, environ);
 		}
 		free(arr);
