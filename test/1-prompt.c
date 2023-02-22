@@ -30,3 +30,5 @@ int main(void)
 			free(arr);
 			exit(0);
 		}
+	}
+}
