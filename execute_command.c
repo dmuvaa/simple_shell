@@ -8,7 +8,7 @@
  * Return: 0 on success, 1 on failure
  */
 
-int execute_command(char **arr)
+int execute_command(char **arr, char **env)
 {
 	pid_t child_pid;
 	char *path = NULL;
@@ -33,7 +33,7 @@ int execute_command(char **arr)
 	}
 	else if (child_pid == 0)
 	{
-		if (execve(path, arr, envp) == -1)
+		if (execve(path, arr, env) == -1)
 		{
 			perror("Error");
 			return (1);
