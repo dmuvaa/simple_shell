@@ -2,6 +2,9 @@
 
 /**
  * print_env - Prints the current environment
+ * @env: array of environment variables
+ *
+ * Return: void
  */
 
 void print_env(char **env)
