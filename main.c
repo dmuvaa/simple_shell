@@ -5,6 +5,9 @@
 
 /**
  * main - Entry point
+ * @argc: Counts arguments
+ * @argv: Arguments
+ * @envp: a pointer
  *
  * Return: 0 on success, 1 on failure
  */
