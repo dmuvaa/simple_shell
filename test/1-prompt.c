@@ -1,4 +1,6 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 int main(void)
 {
@@ -7,21 +9,19 @@ int main(void)
 	pid_t my_pid;
 	int status;
 
-	 while (1)
-	 {
-		 printf("(shell)$ ");
+	while (1)
+	{
+		printf("(shell)$ ");
 
-		 if (getline(&command, &n, stdin) == -1)
-			 break;
+		if (getline(&command, &n, stdin) == -1)
+			break;
 
-		 char **arr = malloc(sizeof(char *) * 32);
-		 int argc = handle_args(command, arr);
+		char **arr = malloc(sizeof(char *) * 32);
+		int argc = handle_args(command, arr);
 
-		 if (strcmp(arr[0], "exit") == 0)
-		 {
-			 free(command);
-			 free(arr);
-			 exit(0);
-		 }
-
-
+		if (strcmp(arr[0], "exit") == 0)
+		{
+			free(command);
+			free(arr);
+			exit(0);
+		}
