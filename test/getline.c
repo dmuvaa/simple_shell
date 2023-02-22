@@ -59,7 +59,7 @@ char *my_getline(void)
 
 	for (int j = buffer_pos; j < i; j++)
 	{
-		line[j - buffer_pos] = buffer[j]
+		line[j - buffer_pos] = buffer[j];
 	}
 	line[i - buffer_pos] = '\0';
 
