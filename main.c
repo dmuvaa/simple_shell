@@ -23,6 +23,7 @@ int main(int argc, char *argv[], char *envp[])
 	while (1)
 	{
 		char **arr = malloc(sizeof(char *) * 32);
+
 		printf("(shell)$ ");
 
 		if (getline(&command, &n, stdin) == -1)
