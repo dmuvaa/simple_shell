@@ -17,7 +17,7 @@ int execute_command(char **arr, char **env)
 	if (arr[0] == NULL)
 		return (0);
 
-	path = get_path(arr[0], env);
+	path = get_path(arr[0], envp);
 	if (path == NULL)
 	{
 		fprintf(stderr, "%s: command not found\n", arr[0]);
@@ -33,7 +33,7 @@ int execute_command(char **arr, char **env)
 	}
 	else if (child_pid == 0)
 	{
-		if (execve(path, arr, env) == -1)
+		if (execve(path, arr, envp) == -1)
 		{
 			perror("Error");
 			return (1);
