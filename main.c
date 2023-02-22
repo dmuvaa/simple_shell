@@ -5,6 +5,9 @@
 
 /**
  * main - Entry point
+ * @argc: Counts arguments
+ * @argv: Arguments
+ * @envp: a pointer
  *
  * Return: 0 on success, 1 on failure
  */
@@ -18,7 +21,7 @@ int main(int argc, char *argv[], char *envp[])
 
 	(void)argc;
 	(void)argv;
-	env = envp;
+	environ = envp;
 
 	while (1)
 	{
