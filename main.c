@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
+
 /**
  * main - Entry point
  * @argc: Counts arguments
@@ -12,13 +13,10 @@
  * Return: 0 on success, 1 on failure
  */
 
-int main(int argc, char *argv[], char *envp[])
+int main(void)
 {
 	char *command = NULL;
 	size_t n = 0;
-	int status;
-
-	environ = envp;
 
 	while (1)
 	{
@@ -28,7 +26,6 @@ int main(int argc, char *argv[], char *envp[])
 		if (getline(&command, &n, stdin) == -1)
 			break;
 
-		int argc = handle_args(command, arr);
 
 		if (argc == 0)
 		{
@@ -42,6 +39,7 @@ int main(int argc, char *argv[], char *envp[])
 		}
 		else
 		{
+			extern char **environ;
 			execute_command(arr, environ);
 		}
 		free(arr);
