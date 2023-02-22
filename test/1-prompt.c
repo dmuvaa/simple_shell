@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+/**
+ * main - Entry point
+ *
+ * Return: Nothing
+ */
 int main(void)
 {
 	char *command = NULL;
