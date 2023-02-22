@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void exit_shell(char* arg)
+void exit_shell(char *arg)
 {
 	int status = 0;
 
