@@ -10,7 +10,7 @@
  * Return: 0 on success, 1 on failure
  */
 
-int main(int argc, char *argv[], char *envp[])
+int main(void)
 {
 	char *command = NULL;
 	size_t n = 0;
