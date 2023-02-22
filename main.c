@@ -39,6 +39,7 @@ int main(void)
 		}
 		else
 		{
+			char **environ = NULL;
 			extern char **environ;
 			execute_command(arr, environ);
 		}
