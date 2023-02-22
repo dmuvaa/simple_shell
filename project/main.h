@@ -16,11 +16,9 @@ extern char **environ;
 
 int handle_args(char *command, char **arr);
 int check_builtins(char *command);
-void execute_builtin(char **arr);
+void execute_builtin(char **arr, *args);
 int execute_command(char **arr, char **env);
 void print_env(char **env);
 char *get_path(char *command, char **env);
-char *get_path(char *command, char **env);
-void execute_builtin(char **args);
 
 #endif
