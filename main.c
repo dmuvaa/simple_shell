@@ -21,7 +21,7 @@ int main(int argc, char *argv[], char *envp[])
 
 	(void)argc;
 	(void)argv;
-	environ = envp;
+	char **env = envp;
 
 	while (1)
 	{
