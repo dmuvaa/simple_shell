@@ -5,11 +5,16 @@
 
 #define BUFFER_SIZE 1024
 
-char* my_getline(void);
+char *my_getline(void);
 
-int main()
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
+int main(void)
 {
-	char* line = NULL;
+	char *line = NULL;
 
 	while ((line = my_getline()) != NULL)
 	{
@@ -19,11 +24,16 @@ int main()
 	return (0);
 }
 
-char* my_getline(void)
+/**
+ * my_getline - a getline function
+ *
+ * Return: A getline function
+ */
+char *my_getline(void)
 {
 	static char buffer[BUFFER_SIZE];
-	static int buffer_pos = 0;
-	static int buffer_len = 0;
+	static int buffer_pos;
+	static int buffer_len;
 
 	if (buffer_pos >= buffer_len)
 	{
@@ -46,7 +56,7 @@ char* my_getline(void)
 		}
 	}
 
-	char* line = (char*) malloc((i - buffer_pos + 1) * sizeof(char));
+	char *line = (char *) malloc((i - buffer_pos + 1) * sizeof(char));
 
 	for (int j = buffer_pos; j < i; j++)
 	{
