@@ -18,7 +18,7 @@ int handle_args(char *command, char **arr);
 int check_builtins(char *command);
 void execute_builtin(char **arr);
 int execute_command(char **arr, char **env);
-void print_env(void);
+void print_env(char **env);
 char *get_path(char *command, char **env);
 void exit_shell(char *arg);
 char *my_getline(void);
