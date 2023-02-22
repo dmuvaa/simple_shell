@@ -1,4 +1,7 @@
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 /**
  * main - Entry point
@@ -25,6 +28,7 @@ int main(int argc, char *argv[], char *envp[])
 
 		char **arr = malloc(sizeof(char *) * 32);
 		int argc = handle_args(command, arr);
+
 		if (argc == 0)
 		{
 			free(arr);
