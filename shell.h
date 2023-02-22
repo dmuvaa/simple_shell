@@ -9,6 +9,6 @@
 
 #define MAX_INPUT_LENGTH 100
 
-int main(int argc, char *argv[]);
+int main(void);
 
 #endif
