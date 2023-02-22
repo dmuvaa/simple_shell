@@ -8,7 +8,7 @@
  * Return: 0 on success, 1 on failure
  */
 
-int execute_command(char **arr, char **env)
+int execute_command(char **arr)
 {
 	pid_t child_pid;
 	char *path = NULL;
@@ -17,7 +17,7 @@ int execute_command(char **arr, char **env)
 	if (arr[0] == NULL)
 		return (0);
 
-	path = get_path(arr[0], envp);
+	path = get_path(arr[0], env);
 	if (path == NULL)
 	{
 		fprintf(stderr, "%s: command not found\n", arr[0]);
