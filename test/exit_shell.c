@@ -2,6 +2,11 @@
 #include <stdio.h>
 #include <string.h>
 
+/**
+ * exit_shell - exits shell
+ * @arg: integer used to exit shell
+ */
+
 void exit_shell(char *arg)
 {
 	int status = 0;
