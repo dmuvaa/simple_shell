@@ -6,9 +6,6 @@
 
 /**
  * main - Entry point
- * @argc: Counts arguments
- * @argv: Arguments
- * @envp: a pointer
  *
  * Return: 0 on success, 1 on failure
  */
@@ -40,11 +37,13 @@ int main(void)
 		}
 		else
 		{
-			extern char **environ;
+			char **envp = environ;
+
 			execute_command(arr, environ);
 		}
 		free(arr);
 	}
 	free(command);
 	return (0);
+
 }
