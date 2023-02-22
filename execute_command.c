@@ -36,7 +36,6 @@ int execute_command(char **arr, char **env)
 		if (execve(path, arr, env) == -1)
 		{
 			perror("Error");
-			free(path);
 			return (1);
 		}
 	}
@@ -47,51 +46,3 @@ int execute_command(char **arr, char **env)
 	free(path);
 	return (0);
 }
-
-/**
- * get_path - Searches for the command in the PATH
- * environment variable
- * @command: the command to search for
- * @env: an array of environment variables
- *
- * Return: The full path of the command or NULL
- * if not found
- */
-
-char *get_path(char *command, char **env)
-{
-	char *path_env, *path, *dir, *tmp;
-	struct stat st;
-
-	path_env = get_env_var("PATH", env);
-
-	if (path_env == NULL)
-		return (NULL);
-
-	path = strdup(path_env);
-	if (path == NULL)
-		return (NULL);
-
-	dir = strtok(path, ":");
-	while (dir != NULL)
-	{
-		tmp = strcat(dir, "/");
-		tmp = strcat(tmp, command);
-		if (stat(tmp, &st) == 0)
-		{
-			free(path_env);
-			free(path);
-			return (tmp);
-		}
-		free(tmp);
-		dir = strtok(NULL, ":");
-	}
-	free(tmp);
-	dir = strtok(NULL, ":");
-
-	free(path_env);
-	free(path);
-
-	return (NULL);
-}
-
